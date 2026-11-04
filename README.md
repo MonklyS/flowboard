@@ -2,6 +2,14 @@
 
 A polished, Linear-inspired Kanban board. Create tasks, drag them across **To Do → In Progress → In Review → Done**, and manage work visually. Every visitor gets a private guest workspace, backed by Supabase with Row Level Security.
 
+**Live demo:** https://flowboard-btz.pages.dev
+
+![Flowboard board in dark mode](docs/screenshots/board-dark.jpg)
+
+| Task detail + activity | Light theme | Mobile |
+| --- | --- | --- |
+| ![Task detail](docs/screenshots/task-detail-activity.jpg) | ![Light theme](docs/screenshots/board-light.jpg) | ![Mobile](docs/screenshots/mobile.jpg) |
+
 **Stack:** React 19 · TypeScript · Vite · Tailwind CSS v4 · shadcn/ui (Radix) · dnd-kit · Framer Motion · TanStack Query · Supabase (Postgres, Auth, Realtime) · Cloudflare Pages
 
 ## Features
@@ -68,6 +76,10 @@ src/
     layout/                Workspace shell and sidebar
     ui/                    shadcn/ui primitives
 ```
+
+## Assessment write-up
+
+The submission document is [`docs/matthew_feyler_task_manager_assessment.pdf`](docs/matthew_feyler_task_manager_assessment.pdf). Regenerate it with `python docs/build_assessment.py` (needs Chrome or Edge).
 
 ## Deploying
 
