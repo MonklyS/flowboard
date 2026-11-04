@@ -41,8 +41,6 @@ th { text-align: left; font-weight: 600; color: var(--muted); font-size: 8pt; te
 td { border-bottom: 1px solid var(--line); padding: 5pt 6pt; vertical-align: top; }
 tr { break-inside: avoid; }
 td code { font-size: 8pt; }
-.pill { display: inline-block; font-size: 7.8pt; font-weight: 600; border-radius: 99pt; padding: 1pt 6pt; }
-.yes { background: #e6f6ef; color: #17805d; }
 .swatches { display: flex; gap: 8pt; flex-wrap: wrap; margin: 6pt 0 10pt; }
 .sw { display: flex; align-items: center; gap: 5pt; font-size: 8.6pt; border: 1px solid var(--line); border-radius: 99pt; padding: 2pt 8pt 2pt 3pt; }
 .sw i { width: 11pt; height: 11pt; border-radius: 99pt; display: inline-block; }
@@ -138,17 +136,17 @@ All colors are OKLCH design tokens defined once in CSS and mapped into Tailwind,
 
 <h2><span class="n">03</span>Features</h2>
 <table>
-  <tr><th style="width:27%">Feature</th><th>How it works</th><th style="width:9%"></th></tr>
-  <tr><td><b>Kanban board</b> (required)</td><td>Four default columns; drag between and within columns; status and position persist on drop; updates appear live in other open tabs.</td><td><span class="pill yes">Built</span></td></tr>
-  <tr><td><b>Guest accounts</b> (required)</td><td><code>signInAnonymously()</code> on first launch; the session persists in localStorage; every row stores <code>user_id</code> (defaulting to <code>auth.uid()</code>); RLS on every table. "Start as a new guest" in the account menu demonstrates isolation.</td><td><span class="pill yes">Built</span></td></tr>
-  <tr><td><b>Create tasks</b> (required)</td><td>Dialog (or <code>C</code> shortcut, or a column's +) with title, description, status, priority, due date, assignees and labels; validation; "Create more" mode; <code>Ctrl+Enter</code> to submit.</td><td><span class="pill yes">Built</span></td></tr>
-  <tr><td><b>1. Team &amp; assignees</b></td><td>Add members (name + color swatch, initials avatar). Multiple assignees per task via a <code>task_assignees</code> join table. Avatar stacks on cards; the sidebar lists the team with open-task counts and filters on click.</td><td><span class="pill yes">Built</span></td></tr>
-  <tr><td><b>2. Comments</b></td><td>Detail panel with chronological comments, relative and exact timestamps, optimistic posting and delete. Stored in a separate <code>comments</code> table; the comment count shows on cards.</td><td><span class="pill yes">Built</span></td></tr>
-  <tr><td><b>3. Activity log</b></td><td>Triggers on <code>tasks</code>, <code>task_assignees</code>, <code>task_labels</code> and <code>comments</code> write to <code>task_activity</code>. The timeline reads "Moved from To Do → In Review · 2 hours ago", "Assigned Ava Chen", "Changed priority from Normal to High".</td><td><span class="pill yes">Built</span></td></tr>
-  <tr><td><b>4. Labels</b></td><td>Custom colored labels (unique per user), several per task, created inline from the picker or in Workspace settings; filter from the toolbar or sidebar.</td><td><span class="pill yes">Built</span></td></tr>
-  <tr><td><b>5. Due-date indicators</b></td><td>Overdue: red badge plus a red accent bar on the card. Today and next 2 days: amber badges ("Today", "Tomorrow", weekday). Later dates are muted. Done tasks never show as overdue.</td><td><span class="pill yes">Built</span></td></tr>
-  <tr><td><b>6. Search &amp; filtering</b></td><td>Search across title and description (<code>/</code> to focus); filters for priority, assignee (including unassigned), label, and overdue / due soon; removable chips and "Showing x of y".</td><td><span class="pill yes">Built</span></td></tr>
-  <tr><td><b>7. Board summary</b></td><td>Header strip: total and active, completed with a progress bar, overdue, and due soon. The overdue and due-soon tiles are toggle filters.</td><td><span class="pill yes">Built</span></td></tr>
+  <tr><th style="width:27%">Feature</th><th>How it works</th></tr>
+  <tr><td><b>Kanban board</b> (required)</td><td>Four default columns; drag between and within columns; status and position persist on drop; updates appear live in other open tabs.</td></tr>
+  <tr><td><b>Guest accounts</b> (required)</td><td><code>signInAnonymously()</code> on first launch; the session persists in localStorage; every row stores <code>user_id</code> (defaulting to <code>auth.uid()</code>); RLS on every table. "Start as a new guest" in the account menu demonstrates isolation.</td></tr>
+  <tr><td><b>Create tasks</b> (required)</td><td>Dialog (or <code>C</code> shortcut, or a column's +) with title, description, status, priority, due date, assignees and labels; validation; "Create more" mode; <code>Ctrl+Enter</code> to submit.</td></tr>
+  <tr><td><b>1. Team &amp; assignees</b></td><td>Add members (name + color swatch, initials avatar). Multiple assignees per task via a <code>task_assignees</code> join table. Avatar stacks on cards; the sidebar lists the team with open-task counts and filters on click.</td></tr>
+  <tr><td><b>2. Comments</b></td><td>Detail panel with chronological comments, relative and exact timestamps, optimistic posting and delete. Stored in a separate <code>comments</code> table; the comment count shows on cards.</td></tr>
+  <tr><td><b>3. Activity log</b></td><td>Triggers on <code>tasks</code>, <code>task_assignees</code>, <code>task_labels</code> and <code>comments</code> write to <code>task_activity</code>. The timeline reads "Moved from To Do → In Review · 2 hours ago", "Assigned Ava Chen", "Changed priority from Normal to High".</td></tr>
+  <tr><td><b>4. Labels</b></td><td>Custom colored labels (unique per user), several per task, created inline from the picker or in Workspace settings; filter from the toolbar or sidebar.</td></tr>
+  <tr><td><b>5. Due-date indicators</b></td><td>Overdue: red badge plus a red accent bar on the card. Today and next 2 days: amber badges ("Today", "Tomorrow", weekday). Later dates are muted. Done tasks never show as overdue.</td></tr>
+  <tr><td><b>6. Search &amp; filtering</b></td><td>Search across title and description (<code>/</code> to focus); filters for priority, assignee (including unassigned), label, and overdue / due soon; removable chips and "Showing x of y".</td></tr>
+  <tr><td><b>7. Board summary</b></td><td>Header strip: total and active, completed with a progress bar, overdue, and due soon. The overdue and due-soon tiles are toggle filters.</td></tr>
 </table>
 
 <h2><span class="n">04</span>Database schema</h2>
